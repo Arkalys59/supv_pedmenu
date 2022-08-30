@@ -60,7 +60,7 @@ local function set(model, key)
     end)
 end
 
-local menu, isOpen, inSub, key, desc = {}, false, false
+local menu, isOpen, key, desc = {}, false
 
 local function CreateMenu()
     menu.main = RageUI.CreateMenu('PedMenu', 'Séléction')
@@ -93,7 +93,6 @@ local function OpenPedMenu()
                 for k in pairs(cfg.Ped)do
                     RageUI.Button(cfg.Cat[k] or k, nil, {}, true, {
                         onSelected = function()
-                            inSub = true
                             key = k
                         end
                     }, menu[k])
